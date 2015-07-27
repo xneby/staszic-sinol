@@ -1,6 +1,6 @@
 %The MIT License (MIT)
 %
-%Copyright (c) 2014 Karol Farbiś
+%Copyright (c) 2014 Karol Farbiś, Marek Sommer
 %
 %Permission is hereby granted, free of charge, to any person obtaining a copy
 %of this software and associated documentation files (the "Software"), to deal
@@ -19,6 +19,7 @@
 %LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 %SOFTWARE.
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{sinol}[2014/02/10]
 
@@ -31,6 +32,7 @@
 \RequirePackage[margin=2cm, a4paper, bottom=4.5cm]{geometry}
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
+\RequirePackage{titlesec}
 
 \newcommand{\RAM@}{BRAK RAMU}
 \newcommand{\data@}{BRAK DATY}
@@ -50,9 +52,9 @@
 \fancyhead{}
 \fancyfoot{}
 
-\fancyhead[L]{\textit{\kontest@}}
-\fancyhead[C]{\includegraphics[width=2cm]{logo.ps}}
-\fancyhead[R]{\textit{\data@}}
+\fancyhead[L]{\kontest@}
+\fancyhead[C]{\includegraphics[width=2cm]{logo.pdf}}
+\fancyhead[R]{\data@}
 \fancyfoot[R]{\textit{\nazwa@}}
 \fancyfoot[C]{\textit{\thepage/\pageref{LastPage}}}
 
@@ -61,13 +63,23 @@
 \setlength{\headheight}{70pt}
 \setcounter{secnumdepth}{0}
 
+\setlength\parindent{0pt}
+\setlength\parskip{10pt}
+
+\titlespacing{\section}{0pt}{-3pt}{-3pt}
+\titleformat{\subsection}{\bf}{}{0pt}{}
+\titlespacing{\subsection}{0pt}{-3pt}{-3pt}
+
 \newenvironment{tasktext}{%startproblex
 {%
-\vspace*{-30pt}\noindent%
+\vspace*{-40pt}\noindent%
 Dostępna pamięć: \RAM@{}MB%
 \begin{center}%
 \vspace*{3ex}%
+\vspace*{-10pt}%
 \textit{ \Huge \nazwa@ }%
+\vspace*{-10pt}%
+\vspace*{-10pt}%
 \vspace*{3ex}%
 \end{center}%
 %
