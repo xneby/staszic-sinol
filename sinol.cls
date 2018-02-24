@@ -119,3 +119,19 @@ Dostępna pamięć: \RAM@{}MB%
 \newcommand{\makeexamplex}[1]{\makeexamplef{../in/\ID#1.in}{../out/\ID#1x.out}}
 
 \newcommand{\makecompactexample}{\section{Przykład}\makeexample0}
+
+\newenvironment{points}{
+\section{Ocenianie}
+\begin{tabular}{|p{0.12\textwidth}|p{0.673\textwidth}|p{0.12\textwidth}|}%
+\hline%
+\centering \textbf{Podzadanie} & \textbf{Warunki} & \centering\let\\\tabularnewline\textbf{Punkty} \tabularnewline%
+\hline%
+}
+{
+\end{tabular}\\[2ex]%
+}
+
+\newcommand{\makesubtask}[3]{
+\centering #1 & #2 & \centering #3 \tabularnewline%
+\hline%
+}
